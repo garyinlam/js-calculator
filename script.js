@@ -40,8 +40,8 @@ const displayAnswer = () => {
 }
 
 const clearCurrent = () => {
-  document.getElementById("display-box").innerHTML = "";
-  document.getElementById("result-box").innerHTML = "";
+  document.getElementById("display-box").innerHTML = "0";
+  document.getElementById("result-box").innerHTML = "0";
 }
 
 const backspace = () => {
