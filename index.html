@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <!-- header contains title and output section -->
+  <header class="header">
+    <h1 class="header__title">Calculator</h1>
+    <!-- output shows current calculation then result when equals button is used -->
+    <section class="header__output output">
+      <p class="output__current-calculation"></p>
+      <p class="output__result"></p>
+    </section>
+  </header>
+
+  <!-- main section contains all buttons that can be used -->
+  <main class="button-contianer">
+    <div class="button-container__button button-container__button--navigation">C</div>
+    <div class="button-container__button button-container__button--operator">÷</div>
+    <div class="button-container__button button-container__button--operator">✕</div>
+    <div class="button-container__button button-container__button--navigation">⇐</div>
+    <div class="button-container__button button-container__button--number">7</div>
+    <div class="button-container__button button-container__button--number">8</div>
+    <div class="button-container__button button-container__button--number">9</div>
+    <div class="button-container__button button-container__button--operator">-</div>
+    <div class="button-container__button button-container__button--number">4</div>
+    <div class="button-container__button button-container__button--number">5</div>
+    <div class="button-container__button button-container__button--number">6</div>
+    <div class="button-container__button button-container__button--operator">+</div>
+    <div class="button-container__button button-container__button--number">1</div>
+    <div class="button-container__button button-container__button--number">2</div>
+    <div class="button-container__button button-container__button--number">3</div>
+    <div class="button-container__button">
+      <div class="button-container__button button-container__button--operator">(</div>
+      <div class="button-container__button button-container__button--operator">)</div>
+    </div>
+    <div class="button-container__button button-container__button--operator">%</div>
+    <div class="button-container__button button-container__button--number">0</div>
+    <div class="button-container__button button-container__button--number">.</div>
+    <div class="button-container__button button-container__button--navigation">=</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
