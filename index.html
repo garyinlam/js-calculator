@@ -12,36 +12,36 @@
     <h1 class="header__title">Calculator</h1>
     <!-- output shows current calculation then result when equals button is used -->
     <section class="header__output output">
-      <p class="output__current-calculation"></p>
-      <p class="output__result"></p>
+      <p class="output__current-calculation" id="display-box"></p>
+      <p class="output__result" id="result-box"></p>
     </section>
   </header>
 
   <!-- main section contains all buttons that can be used -->
   <main class="button-container">
-    <div class="button-container__button button-container__button--navigation">C</div>
-    <div class="button-container__button button-container__button--operator">÷</div>
-    <div class="button-container__button button-container__button--operator">✕</div>
+    <div class="button-container__button button-container__button--navigation" onclick="clearCurrent()">C</div>
+    <div class="button-container__button button-container__button--operator" onclick="writeCurrent('/')">÷</div>
+    <div class="button-container__button button-container__button--operator" onclick="writeCurrent('*')">✕</div>
     <div class="button-container__button button-container__button--navigation">⇐</div>
-    <div class="button-container__button button-container__button--number">7</div>
-    <div class="button-container__button button-container__button--number">8</div>
-    <div class="button-container__button button-container__button--number">9</div>
-    <div class="button-container__button button-container__button--operator">-</div>
-    <div class="button-container__button button-container__button--number">4</div>
-    <div class="button-container__button button-container__button--number">5</div>
-    <div class="button-container__button button-container__button--number">6</div>
-    <div class="button-container__button button-container__button--operator">+</div>
-    <div class="button-container__button button-container__button--number">1</div>
-    <div class="button-container__button button-container__button--number">2</div>
-    <div class="button-container__button button-container__button--number">3</div>
-    <div class="button-container__button">
-      <div class="button-container__button button-container__button--operator">(</div>
-      <div class="button-container__button button-container__button--operator">)</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">7</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">8</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">9</div>
+    <div class="button-container__button button-container__button--operator" onclick="writeCurrent('-')">-</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">4</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">5</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">6</div>
+    <div class="button-container__button button-container__button--operator" onclick="writeCurrent('+')">+</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">1</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">2</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">3</div>
+    <div class="button-container__button brackets">
+      <div class="button-container__button button-container__button--operator" onclick="writeCurrent(this.innerHTML)">(</div>
+      <div class="button-container__button button-container__button--operator" onclick="writeCurrent(this.innerHTML)">)</div>
     </div>
     <div class="button-container__button button-container__button--operator">%</div>
-    <div class="button-container__button button-container__button--number">0</div>
-    <div class="button-container__button button-container__button--number">.</div>
-    <div class="button-container__button button-container__button--navigation">=</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">0</div>
+    <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">.</div>
+    <div class="button-container__button button-container__button--navigation" onclick="displayAnswer()">=</div>
   </main>
   <script src="script.js"></script>
 </body>

@@ -30,3 +30,16 @@ const evaluateEquation = (equation) => {
     return Number(equation);
   }
 }
+
+const writeCurrent = (button) => document.getElementById("display-box").innerHTML += button;
+
+const displayAnswer = () => {
+  const equation = document.getElementById("display-box").innerHTML;
+  const answer = evaluateEquation(equation);
+  document.getElementById("result-box").innerHTML = Number(answer.toFixed(10));
+}
+
+const clearCurrent = () => {
+  document.getElementById("display-box").innerHTML = "";
+  document.getElementById("result-box").innerHTML = "";
+}
