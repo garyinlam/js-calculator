@@ -6,6 +6,8 @@ $font-primary: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,mono
   font-family: $font-primary;
 }
 
+
+
 .button-container {
   display: grid;
   grid-template-areas: 
@@ -14,4 +16,7 @@ $font-primary: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,mono
   "four five six plus" 
   "one two three bracket"
   "percent zero point equals";
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
