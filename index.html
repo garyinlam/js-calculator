@@ -21,8 +21,8 @@
   <main class="button-container">
     <div class="button-container__button button-container__button--navigation" onclick="clearCurrent()">C</div>
     <div class="button-container__button button-container__button--operator" onclick="writeCurrent('/')">÷</div>
-    <div class="button-container__button button-container__button--operator" onclick="writeCurrent('*')">✕</div>
-    <div class="button-container__button button-container__button--navigation">⇐</div>
+    <div class="button-container__button button-container__button--operator" onclick="writeCurrent('*')">×</div>
+    <div class="button-container__button button-container__button--navigation" onclick="backspace()">⇐</div>
     <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">7</div>
     <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">8</div>
     <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">9</div>
@@ -38,7 +38,7 @@
       <div class="button-container__button button-container__button--operator" onclick="writeCurrent(this.innerHTML)">(</div>
       <div class="button-container__button button-container__button--operator" onclick="writeCurrent(this.innerHTML)">)</div>
     </div>
-    <div class="button-container__button button-container__button--operator">%</div>
+    <div class="button-container__button button-container__button--operator"></div>
     <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">0</div>
     <div class="button-container__button button-container__button--number" onclick="writeCurrent(this.innerHTML)">.</div>
     <div class="button-container__button button-container__button--navigation" onclick="displayAnswer()">=</div>

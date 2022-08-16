@@ -43,3 +43,9 @@ const clearCurrent = () => {
   document.getElementById("display-box").innerHTML = "";
   document.getElementById("result-box").innerHTML = "";
 }
+
+const backspace = () => {
+  let output = document.getElementById("display-box").innerHTML;
+  output = output.slice(0,-1);
+  document.getElementById("display-box").innerHTML =output;
+}

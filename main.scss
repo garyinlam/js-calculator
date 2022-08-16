@@ -12,8 +12,10 @@ $font-primary: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,mono
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
   &__title {
     align-self: center;
+    padding: 20px;
   }
 }
 
@@ -33,4 +35,9 @@ $font-primary: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,mono
 .brackets {
   display: grid;
   grid-template-areas: "left right";
+  font-size: 1em;
+}
+
+.output {
+  text-align: right;
 }
