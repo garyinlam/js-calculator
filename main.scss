@@ -1,0 +1,17 @@
+$font-primary: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+
+* {
+  margin: 0;
+  padding: 0;;
+  font-family: $font-primary;
+}
+
+.button-container {
+  display: grid;
+  grid-template-areas: 
+  "clear divide multiply backspace" 
+  "seven eight nine minus" 
+  "four five six plus" 
+  "one two three bracket"
+  "percent zero point equals";
+}
