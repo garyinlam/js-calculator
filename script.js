@@ -1,3 +1,4 @@
+let prevAns = 0;
 const evaluateEquation = (equation) => {
   if(equation.indexOf("(") != -1) {
     const start = equation.indexOf("(");
@@ -31,12 +32,15 @@ const evaluateEquation = (equation) => {
   }
 }
 
-const writeCurrent = (button) => document.getElementById("display-box").innerHTML += button;
+const writeCurrent = (button) => {
+  document.getElementById("display-box").innerHTML += button;
+}
 
 const displayAnswer = () => {
   const equation = document.getElementById("display-box").innerHTML;
   const answer = evaluateEquation(equation);
-  document.getElementById("result-box").innerHTML = Number(answer.toFixed(10));
+  prevAns = Number(answer.toFixed(10))
+  document.getElementById("result-box").innerHTML = prevAns;
 }
 
 const clearCurrent = () => {
@@ -47,5 +51,9 @@ const clearCurrent = () => {
 const backspace = () => {
   let output = document.getElementById("display-box").innerHTML;
   output = output.slice(0,-1);
-  document.getElementById("display-box").innerHTML =output;
+  document.getElementById("display-box").innerHTML = output;
+}
+
+const previousAnswer = () => {
+  document.getElementById("display-box").innerHTML += prevAns;
 }
