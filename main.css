@@ -6,6 +6,11 @@
   font-size: 1.3em;
 }
 
+body {
+  background-color: #010055;
+  color: #f6fffe;
+}
+
 .header {
   height: 35vh;
   display: flex;
@@ -19,19 +24,42 @@
 }
 
 .button-container {
+  background-color: #01002e;
   display: grid;
-  grid-template-areas: "clear divide multiply backspace" "seven eight nine minus" "four five six plus" "one two three bracket" "percent zero point equals";
+  grid-template-areas: "clear divide multiply backspace" "seven eight nine minus" "four five six plus" "one two three bracket" ". zero point equals";
+  gap: 15px;
   text-align: center;
   width: 100vw;
   height: 65vh;
+  border-top: 2px solid #00a2ff;
+  box-sizing: border-box;
+}
+.button-container__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-container__button--navigation {
+  color: #00a2ff;
+}
+.button-container__button--clear {
+  color: #ffa600;
+}
+.button-container__button:hover {
+  filter: brightness(200%);
+  background-color: #01002e;
 }
 
 .brackets {
-  display: grid;
-  grid-template-areas: "left right";
+  display: flex;
+  justify-content: space-evenly;
   font-size: 1em;
 }
 
 .output {
   text-align: right;
+}
+.output * {
+  height: 10vh;
+  padding-right: 10px;
 }

@@ -12,14 +12,14 @@
     <h1 class="header__title">Calculator</h1>
     <!-- output shows current calculation then result when equals button is used -->
     <section class="header__output output">
-      <p class="output__current-calculation" id="display-box">0</p>
-      <p class="output__result" id="result-box">0</p>
+      <p class="output__current-calculation" id="display-box"></p>
+      <p class="output__result" id="result-box"></p>
     </section>
   </header>
 
   <!-- main section contains all buttons that can be used -->
   <main class="button-container">
-    <div class="button-container__button button-container__button--navigation" onclick="clearCurrent()">C</div>
+    <div class="button-container__button button-container__button--clear" onclick="clearCurrent()">C</div>
     <div class="button-container__button button-container__button--operator" onclick="writeCurrent('/')">÷</div>
     <div class="button-container__button button-container__button--operator" onclick="writeCurrent('*')">×</div>
     <div class="button-container__button button-container__button--navigation" onclick="backspace()">⇐</div>
