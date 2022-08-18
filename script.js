@@ -27,7 +27,15 @@ const evaluateEquation = (equation) => {
   //check for brackets first
   if(equation.indexOf("(") != -1) {
     //find corresponding closing bracket
-    const start = equation.indexOf("(");
+    let start = equation.indexOf("(");
+
+    if(start != 0){
+      if(!isNaN(equation[start-1])) {
+        equation = equation.slice(0,start)+"*"+equation.slice(start);
+        start++;
+      }
+    }
+
     let end = start;
     let bracketLevel = 0;
     for (let i = start+1; i < equation.length; i++){
