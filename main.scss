@@ -41,10 +41,18 @@ body {
   height: 65vh;
   border-top: 2px solid $colour-nav-button;
   box-sizing: border-box;
+  cursor: default;
   &__button {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     &--navigation {
       color: $colour-nav-button;
     }
@@ -68,8 +76,53 @@ body {
 
 .output {
   text-align: right;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100vw;
   & * {
     height: 10vh;
     padding-right: 10px;
+    white-space: nowrap;
+  }
+}
+
+#history {
+  display: none;
+  text-align: right;
+  p {
+    margin: 10px;
+    border: 5px solid $colour-primary;
+    padding: 5px;
+    background-color: $colour-tertiary;
+    &:hover {
+      filter: brightness(125%);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body{
+    display: flex;
+    overflow-y: hidden;
+  }
+
+  #calculator {
+    max-width: 481px;
+    border-right: 2px solid $colour-nav-button;
+  }
+
+  .output{
+    max-width: 481px;
+  }
+
+  .button-container{
+    width: auto;
+  }
+  #history{
+    display: flex;
+    flex-direction: column-reverse;
+
+    justify-content: flex-end;
+    flex-wrap: wrap;
   }
 }
