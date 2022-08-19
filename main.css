@@ -22,6 +22,27 @@ body {
   align-self: center;
   padding: 20px;
 }
+.header__help-button {
+  position: absolute;
+  margin: 5px;
+  background-color: #00a2ff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.help-menu {
+  display: none;
+}
 
 .button-container {
   background-color: #01002e;

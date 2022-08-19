@@ -161,3 +161,18 @@ history.addEventListener("click", (e) => {
     result.innerHTML = prevAns;
   }
 })
+
+document.addEventListener('keydown', (e) => {
+  const validKeys = "*/+-().";
+  if(!isNaN(e.key)) {
+    writeCurrent(e.key);
+  } else if(validKeys.includes(e.key)) {
+    writeCurrent(e.key);
+  } else if (e.key == "Enter" || e.key == "=") {
+    displayAnswer();
+  } else if(e.key == "Backspace") {
+    backspace();
+  } else if(e.key == "Escape") {
+    clearCurrent();
+  }
+});
