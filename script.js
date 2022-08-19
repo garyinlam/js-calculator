@@ -168,16 +168,22 @@ history.addEventListener("click", (e) => {
 helpButton.addEventListener("click", () => helpList.classList.toggle("show"));
 
 document.addEventListener('keydown', (e) => {
-  const validKeys = "*/+-().";
+  const validKeys = "+-().";
   if(!isNaN(e.key)) {
     writeCurrent(e.key);
   } else if(validKeys.includes(e.key)) {
     writeCurrent(e.key);
+  } else if(e.key == "*" || e.key=="/") {
+    if (!isDivideTimes(display.innerHTML.slice(-1))){
+      writeCurrent(e.key);
+    };
   } else if (e.key == "Enter" || e.key == "=") {
     displayAnswer();
   } else if(e.key == "Backspace") {
     backspace();
   } else if(e.key == "Escape") {
     clearCurrent();
+  } else if(e.key == "a") {
+    previousAnswer();
   }
 });

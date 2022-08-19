@@ -56,6 +56,11 @@ body {
   padding: 40px;
   margin: 5px;
   border-radius: 10px;
+  ul {
+    li {
+      margin-top: 5px;
+    }
+  }
 }
 
 .show {
@@ -64,7 +69,6 @@ body {
 
 .desktop {
   display: none;
-  margin: 10px;
   ul {
     font-size: 0.7em;
   }
@@ -167,7 +171,7 @@ body {
   }
 
   .desktop {
-    display: block;
+    display: list-item;
   }
 
   .help-menu {

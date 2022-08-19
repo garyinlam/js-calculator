@@ -49,6 +49,9 @@ body {
   margin: 5px;
   border-radius: 10px;
 }
+.help-menu ul li {
+  margin-top: 5px;
+}
 
 .show {
   display: block;
@@ -56,7 +59,6 @@ body {
 
 .desktop {
   display: none;
-  margin: 10px;
 }
 .desktop ul {
   font-size: 0.7em;
@@ -155,7 +157,7 @@ body {
   }
 
   .desktop {
-    display: block;
+    display: list-item;
   }
 
   .help-menu {
