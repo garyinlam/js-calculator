@@ -32,6 +32,8 @@ const evaluateEquation = (equation) => {
     //find corresponding closing bracket
     let start = equation.indexOf("(");
 
+    //checking if there is a number before the bracket
+    //if so, insert the implicit *
     if(start != 0){
       if(!isNaN(equation[start-1])) {
         equation = equation.slice(0,start)+"*"+equation.slice(start);
@@ -56,10 +58,10 @@ const evaluateEquation = (equation) => {
     // recursive call, evaluate brackets first then put answer back in equation
     return evaluateEquation(equation.slice(0,start) + evaluateEquation(equation.slice(start+1,end)) + equation.slice(end+1));
   //look for +/- first so * and / evaluate first
+  //use lastIndexOf() to ensure evaluates left to right
   } else if (equation.indexOf("+") != -1) { 
-    // TODO: fix *+x issue
-    // look left of +-, if */ then move left one and evaluate lhs */ rhs
-    const operatorPos = equation.lastIndexOf("+"); 
+    const operatorPos = equation.lastIndexOf("+");
+    //checking if there is a * or / before otherwise will insert an erroneous zero between the two operators 
     if (isDivideTimes(equation[operatorPos-1])) {
       if (equation[operatorPos-1] == '*') {
         return evaluateEquation(equation.slice(0,operatorPos-1)) * evaluateEquation(equation.slice(operatorPos));
@@ -92,6 +94,7 @@ const evaluateEquation = (equation) => {
   }
 }
 
+//used to check for both syntax and in evaluate method
 const isDivideTimes = (str) => str == '/' || str == '*';
 
 //methods used for event listeners
@@ -99,10 +102,16 @@ const writeCurrent = (button) => {
   display.innerHTML += button;
 }
 
+//equals
 const displayAnswer = () => {
+  //get expression and evaluate
   const equation = display.innerHTML;
   const answer = evaluateEquation(equation);
+  //store answer
+  //use toFixed to address float precision problem
+  //retype as number to remove trailing zeros
   prevAns = Number(answer.toFixed(20));
+  //save problem in history section
   history.innerHTML += `<p>${equation}<br>= ${prevAns}</p>`;
   result.innerHTML = prevAns;
 }
@@ -121,6 +130,7 @@ const backspace = () => {
 const previousAnswer = () => {
   if (!(prevAns+"").includes("e")) {
     display.innerHTML += prevAns;
+  //using scientific notation will result in NaN so disallow it
   } else {
     alert("Cannot insert previous answer due to scientific notation");
   }
@@ -155,11 +165,12 @@ prev.addEventListener("click", previousAnswer);
 equals.addEventListener("click", displayAnswer);
 back.addEventListener("click", backspace);
 
-
+//if a previous problem is clicked, populate the display and result with that problem
 history.addEventListener("click", (e) => {
   if (e.target.tagName === "P") {
     const parts = e.target.innerHTML.split(" ");
     prevAns = Number(parts[1]);
+    ///slice to remove  <br>=
     display.innerHTML = parts[0].slice(0,-5);
     result.innerHTML = prevAns;
   }
@@ -167,6 +178,7 @@ history.addEventListener("click", (e) => {
 
 helpButton.addEventListener("click", () => helpList.classList.toggle("show"));
 
+//catching keyboard inputs
 document.addEventListener('keydown', (e) => {
   const validKeys = "+-().";
   if(!isNaN(e.key)) {
@@ -174,6 +186,7 @@ document.addEventListener('keydown', (e) => {
   } else if(validKeys.includes(e.key)) {
     writeCurrent(e.key);
   } else if(e.key == "*" || e.key=="/") {
+    //prevent double ** or // (bad syntax)
     if (!isDivideTimes(display.innerHTML.slice(-1))){
       writeCurrent(e.key);
     };
