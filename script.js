@@ -53,8 +53,13 @@ const evaluateEquation = (equation) => {
     // recursive call, evaluate brackets first then put answer back in equation
     return evaluateEquation(equation.slice(0,start) + evaluateEquation(equation.slice(start+1,end)) + equation.slice(end+1));
   //look for +/- first so * and / evaluate first
-  } else if (equation.indexOf("+") != -1) {
-    const operatorPos = equation.lastIndexOf("+");
+  } else if (equation.indexOf("+") != -1) { 
+    // TODO: fix *+x issue
+    // look left of +-, if */ then move left one and evaluate lhs */ rhs
+    const operatorPos = equation.lastIndexOf("+"); 
+    if (isDivideTimes(equation[operatorPos-1])) {
+      
+    }
     return evaluateEquation(equation.slice(0,operatorPos)) + evaluateEquation(equation.slice(operatorPos+1));
   } else if (equation.indexOf("-") != -1) {
     const operatorPos = equation.lastIndexOf("-");
@@ -70,6 +75,8 @@ const evaluateEquation = (equation) => {
     return Number(equation);
   }
 }
+
+const isDivideTimes = (str) => str == '/' || str == '*';
 
 //methods used for event listeners
 const writeCurrent = (button) => {
@@ -113,8 +120,16 @@ for (let index = 0; index < brackets.length; index++) {
 
 add.addEventListener("click", (e) => writeCurrent(e.target.operator));
 minus.addEventListener("click", (e) => writeCurrent(e.target.operator));
-divide.addEventListener("click", (e) => writeCurrent(e.target.operator));
-multiply.addEventListener("click", (e) => writeCurrent(e.target.operator));
+divide.addEventListener("click", (e) => {
+  if (!isDivideTimes(display.innerHTML.slice(-1))){
+    writeCurrent(e.target.operator);
+  }
+});
+multiply.addEventListener("click", (e) => {
+  if (!isDivideTimes(display.innerHTML.slice(-1))){
+    writeCurrent(e.target.operator);
+  }
+});
 
 prev.addEventListener("click", previousAnswer);
 equals.addEventListener("click", displayAnswer);
