@@ -99,7 +99,7 @@ const writeCurrent = (button) => {
 const displayAnswer = () => {
   const equation = display.innerHTML;
   const answer = evaluateEquation(equation);
-  prevAns = Number(answer.toFixed(100));
+  prevAns = Number(answer.toFixed(20));
   history.innerHTML += `<p>${equation}<br>= ${prevAns}</p>`;
   result.innerHTML = prevAns;
 }
@@ -116,7 +116,11 @@ const backspace = () => {
 }
 
 const previousAnswer = () => {
-  display.innerHTML += prevAns;
+  if (!(prevAns+"").includes("e")) {
+    display.innerHTML += prevAns;
+  } else {
+    alert("Cannot insert previous answer due to scientific notation");
+  }
 }
 
 //add event listeners
