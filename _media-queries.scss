@@ -21,9 +21,12 @@
   #history{
     display: flex;
     flex-direction: column-reverse;
-
+    align-content: flex-end;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    h2 {
+      order: 1;
+    }
   }
 
   .desktop {
