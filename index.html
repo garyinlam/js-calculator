@@ -12,7 +12,23 @@
     <header class="calculator__header header">
       <h1 class="header__title">Calculator</h1>
       <div class="header__help-button">?</div>
-      <div class="help-menu"></div>
+      <div class="help-menu">
+        <ul>
+          <li>'Ans' button puts in previous answer</li>
+          <li>Cannot input answers containing scientific notation (e+20)</li>
+          <li>'C' will clear both current input and answer fields, but not previous answer</li>
+          <li>Not recommended to use numbers greater than 1e+20 or less than 1e-7</li>
+          <li class="desktop">Keyboard shortcuts:
+            <ul>
+              <li>All number buttons work</li>
+              <li>Basic operators *?+- brackets () and .</li>
+              <li>Esc to clear</li>
+              <li>Enter and equals both will calculate answer</li>
+              <li>Backspace to remove last character input</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
       <!-- output shows current calculation then result when equals button is used -->
       <section class="header__output output">
         <p class="output__current-calculation" id="display-box"></p>

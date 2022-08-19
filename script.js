@@ -20,6 +20,9 @@ const back = document.getElementById("back");
 
 const history = document.getElementById("history");
 
+const helpButton = document.querySelector(".header__help-button");
+const helpList = document.querySelector(".help-menu");
+
 let prevAns = 0;
 
 //evaluate the given equation
@@ -161,6 +164,8 @@ history.addEventListener("click", (e) => {
     result.innerHTML = prevAns;
   }
 })
+
+helpButton.addEventListener("click", () => helpList.classList.toggle("show"));
 
 document.addEventListener('keydown', (e) => {
   const validKeys = "*/+-().";

@@ -50,6 +50,24 @@ body {
 
 .help-menu {
   display: none;
+  position: relative;
+  font-size: 0.3em;
+  background-color: $colour-nav-button;
+  padding: 40px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.show {
+  display: block;
+}
+
+.desktop {
+  display: none;
+  margin: 10px;
+  ul {
+    font-size: 0.7em;
+  }
 }
 
 .button-container {
@@ -146,5 +164,14 @@ body {
 
     justify-content: flex-end;
     flex-wrap: wrap;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .help-menu {
+    left: 500px;
+    top: -100px;
   }
 }
