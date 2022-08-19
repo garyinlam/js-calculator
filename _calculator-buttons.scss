@@ -1,0 +1,43 @@
+@use "./variables" as *;
+.button-container {
+  background-color: $colour-primary;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  text-align: center;
+  width: 100vw;
+  height: 65vh;
+  border-top: 2px solid $colour-nav-button;
+  box-sizing: border-box;
+  cursor: default;
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &--navigation {
+      color: $colour-nav-button;
+    }
+    &--clear{
+      color: $colour-clear-button;
+    }
+
+    &:hover {
+      filter: brightness(200%);
+      background-color: $colour-primary;
+    }
+  }
+}
+
+.brackets {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1em;
+
+}

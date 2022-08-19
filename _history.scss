@@ -1,0 +1,15 @@
+@use "./variables" as *;
+
+#history {
+  display: none;
+  text-align: right;
+  p {
+    margin: 10px;
+    border: 5px solid $colour-primary;
+    padding: 5px;
+    background-color: $colour-tertiary;
+    &:hover {
+      filter: brightness(125%);
+    }
+  }
+}

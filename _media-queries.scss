@@ -1,0 +1,37 @@
+@use "./variables" as *;
+
+@media screen and (min-width: 768px) {
+  body{
+    display: flex;
+    overflow-y: hidden;
+  }
+
+  #calculator {
+    max-width: 481px;
+    border-right: 2px solid $colour-nav-button;
+  }
+
+  .output{
+    max-width: 481px;
+  }
+
+  .button-container{
+    width: auto;
+  }
+  #history{
+    display: flex;
+    flex-direction: column-reverse;
+
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .desktop {
+    display: list-item;
+  }
+
+  .help-menu {
+    left: 500px;
+    top: -100px;
+  }
+}

@@ -1,0 +1,27 @@
+@use "./variables" as *;
+
+.help-menu {
+  display: none;
+  position: relative;
+  font-size: 0.3em;
+  background-color: $colour-nav-button;
+  padding: 40px;
+  margin: 5px;
+  border-radius: 10px;
+  ul {
+    li {
+      margin-top: 5px;
+    }
+  }
+}
+
+.show {
+  display: block;
+}
+
+.desktop {
+  display: none;
+  ul {
+    font-size: 0.7em;
+  }
+}
