@@ -111,7 +111,7 @@ const displayAnswer = () => {
   //store answer
   //use toFixed to address float precision problem
   //retype as number to remove trailing zeros
-  prevAns = Number(answer.toFixed(20));
+  prevAns = Number(answer.toFixed(16));
   //save problem in history section
   history.innerHTML += `<p>${equation}<br>= ${prevAns}</p>`;
   result.innerHTML = prevAns;
