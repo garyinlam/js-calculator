@@ -96,6 +96,7 @@ const evaluateEquation = (equation) => {
 
 //used to check for both syntax and in evaluate method
 const isDivideTimes = (str) => str == '/' || str == '*';
+const isOperator = (str) => str == '+' || str == '-' || isDivideTimes(str);
 
 //methods used for event listeners
 const writeCurrent = (button) => {
@@ -151,12 +152,12 @@ for (let index = 0; index < brackets.length; index++) {
 add.addEventListener("click", (e) => writeCurrent(e.target.operator));
 minus.addEventListener("click", (e) => writeCurrent(e.target.operator));
 divide.addEventListener("click", (e) => {
-  if (!isDivideTimes(display.innerHTML.slice(-1))){
+  if (!isOperator(display.innerHTML.slice(-1))){
     writeCurrent(e.target.operator);
   }
 });
 multiply.addEventListener("click", (e) => {
-  if (!isDivideTimes(display.innerHTML.slice(-1))){
+  if (!isOperator(display.innerHTML.slice(-1))){
     writeCurrent(e.target.operator);
   }
 });
@@ -187,7 +188,7 @@ document.addEventListener('keydown', (e) => {
     writeCurrent(e.key);
   } else if(e.key == "*" || e.key=="/") {
     //prevent double ** or // (bad syntax)
-    if (!isDivideTimes(display.innerHTML.slice(-1))){
+    if (!isOperator(display.innerHTML.slice(-1))){
       writeCurrent(e.key);
     };
   } else if (e.key == "Enter" || e.key == "=") {

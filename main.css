@@ -120,6 +120,9 @@ body {
   display: none;
   text-align: right;
 }
+#history h2 {
+  margin: 10px;
+}
 #history p {
   margin: 10px;
   border: 5px solid #01002e;
