@@ -45,6 +45,7 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   width: 100vw;
+  font-size: 1em;
 }
 .output * {
   height: 10vh;
