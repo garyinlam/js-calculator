@@ -123,6 +123,7 @@ body {
 }
 #history h2 {
   margin: 10px;
+  align-self: flex-end;
 }
 #history p {
   margin: 10px;
