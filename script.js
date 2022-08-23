@@ -73,14 +73,18 @@ const evaluateEquation = (equation) => {
     }
   } else if (equation.indexOf("-") != -1) {
     const operatorPos = equation.lastIndexOf("-");
-    if (isDivideTimes(equation[operatorPos-1])) {
-      if (equation[operatorPos-1] == '*') {
-        return evaluateEquation(equation.slice(0,operatorPos-1)) * evaluateEquation(equation.slice(operatorPos));
-      } else {
-        return evaluateEquation(equation.slice(0,operatorPos-1)) / evaluateEquation(equation.slice(operatorPos));
-      }
+    if(equation[operatorPos-1] == '-') {
+      return evaluateEquation(equation.slice(0 ,operatorPos-1) + "+" + equation.slice(operatorPos+1));
     } else {
-      return evaluateEquation(equation.slice(0,operatorPos)) - evaluateEquation(equation.slice(operatorPos+1));
+      if (isDivideTimes(equation[operatorPos-1])) {
+        if (equation[operatorPos-1] == '*') {
+          return evaluateEquation(equation.slice(0,operatorPos-1)) * evaluateEquation(equation.slice(operatorPos));
+        } else {
+          return evaluateEquation(equation.slice(0,operatorPos-1)) / evaluateEquation(equation.slice(operatorPos));
+        }
+      } else {
+        return evaluateEquation(equation.slice(0,operatorPos)) - evaluateEquation(equation.slice(operatorPos+1));
+      }
     }
   } else if (equation.indexOf("/") != -1) {
     const operatorPos = equation.lastIndexOf("/");
