@@ -14,3 +14,12 @@ Keyboard can be used for entry.
 - Enter key and = key both calculate answer
 - Esc key will clear result and current expression
 - 'a' key will function as Ans button
+
+## Technologies
+
+- JavaScript
+- HTML
+- CSS
+
+## Screenshot
+![Screenshot](/images/calc.jpg)
